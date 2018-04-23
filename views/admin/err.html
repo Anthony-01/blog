@@ -1,0 +1,9 @@
+{% extends 'layout.html'%}
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="#">分类管理</a></li>
+    <li class="active">分类添加</li>
+</ol>
+<div class="alert {{type}}" role="alert">{{messege}}</div>
+<a href="javascript:window.history.back();">返回上一页</a>
+{% endblock %}

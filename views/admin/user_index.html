@@ -1,0 +1,31 @@
+{% extends 'layout.html'%}
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="#">用户管理</a></li>
+    <li class="active">用户展示</li>
+</ol>
+{% include "page.html" %}
+<table class="table table-striped">
+    <tr>
+        <th>用户唯一标识ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>是否管理员</th>
+        <th>操作</th>
+    </tr>
+    {% for item in user%}
+    <tr>
+        <td>{{item._id.toString()}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.password}}</td>
+        <td>
+            {% if item.isAdmin %}
+            是
+            {% endif %}
+        </td>
+        <td><a href="">修改</a></td>
+    </tr>
+    {% endfor%}
+</table>
+
+{% endblock %}

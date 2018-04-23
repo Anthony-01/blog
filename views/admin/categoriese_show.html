@@ -1,0 +1,25 @@
+{% extends 'layout.html'%}
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="#">分类管理</a></li>
+    <li class="active">分类展示</li>
+</ol>
+{% include "page.html" %}
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>分类名</th>
+        <th>操作</th>
+    </tr>
+    {% for category in category%}
+    <tr>
+        <td>{{category._id.toString()}}</td>
+        <td>{{category.name}}</td>
+        <td><a href="">修改</a></td>
+    </tr>
+    {% endfor%}
+</table>
+
+
+
+{% endblock %}
